@@ -1,0 +1,38 @@
+////
+/// @group banner
+////
+
+/// Background color for the banner. This color also cascades to menus within the top bar.
+/// @type Color
+$uthsc-banner-background: $primary-color !default;
+$uthsc-banner-homepage-border: scale-color($primary-color, $lightness: 10%);
+
+/// Adds styles for a top bar container.
+@mixin uthsc-banner-container {
+  background-color: $uthsc-banner-background;
+
+  //center text in banner
+  // includes logo
+  text-align: center;
+
+  //make sure search button is
+  //aligned with input
+  .input-group-button {
+    vertical-align: top;
+  }
+
+  .uthsc-logo {
+    padding:1em;
+    width: 100%;
+  }
+}
+
+@mixin uthsc-banner {
+  .uthsc-banner {
+    @include uthsc-banner-container;
+  }
+
+  .uthsc-banner-homepage{
+    border-bottom: 1px solid $uthsc-banner-homepage-border;
+  }
+}

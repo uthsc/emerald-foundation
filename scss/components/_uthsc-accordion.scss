@@ -1,0 +1,11 @@
+// Fix font color
+
+$accordion-content-color: foreground($accordion-background, $body-font-color);
+
+// Fix font scaling
+
+@mixin uthsc-accordion {
+  .accordion-title {
+    font-size: 1rem;
+  }
+}

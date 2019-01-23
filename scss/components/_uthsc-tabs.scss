@@ -1,0 +1,9 @@
+@mixin uthsc-tabs {
+  ul.tabs li.tabs-title > a {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.main-content {
+  @include uthsc-tabs;
+}

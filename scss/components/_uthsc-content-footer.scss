@@ -1,0 +1,160 @@
+////
+/// @group footer-top
+////
+
+/// Background color for the top footer.
+/// @type Color
+$uthsc-content-footer-background: #EFEFEF !default;
+
+/// Adds styles for a top bar container.
+@mixin uthsc-content-footer-styles {
+  background-color: $uthsc-content-footer-background;
+  padding: 40px 0 0;
+  margin-top: 52px;
+}
+
+@mixin uthsc-content-footer {
+  .uthsc-content-footer {
+    @include uthsc-content-footer-styles;
+  }
+
+  .uthsc-share {
+    &:first-of-type {
+      margin-bottom: 0;
+    }
+    a {
+      border-bottom:1px solid;
+    }
+
+    .uthsc-twitter {
+      @include button-style($uthsc-twitter, $background-hover:auto);
+    }
+    .uthsc-facebook {
+      @include button-style($uthsc-facebook, $background-hover:auto);
+    }
+    .uthsc-google-plus {
+      @include button-style($uthsc-google-plus, $background-hover:auto);
+    }
+    .uthsc-linkedin {
+      @include button-style($uthsc-linkedin, $background-hover:auto);
+    }
+    .uthsc-email {
+      @include button-style($dark-gray, $background-hover:auto);
+    }
+    .uthsc-print {
+      @include button-style($dark-gray, $background-hover:auto);
+    }
+  }
+
+  .uthsc-connect {
+    @include uthsc-horizontal-spaced;
+    a {
+      padding: 0.2rem;
+    }
+    .uthsc-twitter {
+      color: $uthsc-twitter;
+      &:hover {
+        color: scale_color($uthsc-twitter, $lightness: -15%);
+      }
+    }
+    .uthsc-facebook {
+      color: $uthsc-facebook;
+      &:hover {
+        color: scale_color($uthsc-facebook, $lightness: -15%);
+      }
+    }
+    .uthsc-instagram {
+      color: $uthsc-instagram;
+      &:hover {
+        color: scale_color($uthsc-instagram, $lightness: -15%);
+      }
+    }
+    .uthsc-youtube {
+      color: $uthsc-youtube;
+      &:hover {
+        color: scale_color($uthsc-youtube, $lightness: -15%);
+      }
+    }
+    .uthsc-linkedin {
+      color: $uthsc-linkedin;
+      &:hover {
+        color: scale_color($uthsc-linkedin, $lightness: -15%);
+      }
+    }
+    .uthsc-pinterest {
+      color: $uthsc-pinterest;
+      &:hover {
+        color: scale_color($uthsc-pinterest, $lightness: -15%);
+      }
+    }
+    .uthsc-google-plus {
+      color: $uthsc-google-plus;
+      &:hover {
+        color: scale_color($uthsc-google-plus, $lightness: -15%);
+      }
+    }
+    .uthsc-tumblr {
+      color: $uthsc-tumblr;
+      &:hover {
+        color: scale_color($uthsc-tumblr, $lightness: -15%);
+      }
+    }
+    .uthsc-flickr {
+      color: $uthsc-flickr;
+      &:hover {
+        color: scale_color($uthsc-flickr, $lightness: -15%);
+      }
+    }
+    .uthsc-reddit {
+      color: $uthsc-reddit;
+      &:hover {
+        color: scale_color($uthsc-reddit, $lightness: -15%);
+      }
+    }
+    .uthsc-vine {
+      color: $uthsc-vine;
+      &:hover {
+        color: scale_color($uthsc-vine, $lightness: -15%);
+      }
+    }
+    .uthsc-fa-vine {
+      background-image: url('../images/vine-square.png');
+      width: 42px;
+      height: 42px;
+      display: block;
+      background-size: cover;
+      margin-top: 3px;
+      &:hover {
+        background-image: url("../images/vine-square-darken.png");
+      }
+    }
+    .uthsc-vimeo {
+      color: $uthsc-vimeo;
+      &:hover {
+        color: scale_color($uthsc-vimeo, $lightness: -15%);
+      }
+    }
+    .uthsc-snapchat {
+      color: $uthsc-snapchat;
+      &:hover {
+        color: scale_color($uthsc-snapchat, $lightness: -15%);
+      }
+    }
+  }
+
+  .footer-box:last-of-type ul li {
+    display: inline;
+    a {
+      background-image: none;
+    }
+  }
+  .uthsc-last-published {
+    color: #6a6a6a;
+    background-color: $uthsc-content-footer-background;
+    border-top: 1px solid #ddd;
+    p {
+      margin: 0;
+      padding: .4rem 0;
+    }
+  }
+}

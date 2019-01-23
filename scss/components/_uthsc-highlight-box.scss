@@ -1,0 +1,74 @@
+////
+/// @group highlight box
+////
+
+/// Adds styles for a top bar container.
+@mixin uthsc-highlight-box {
+  .uthsc-highlight-box {
+
+  @mixin uthsc-highlight-box-color($color) {
+    .uthsc-highlight-box-title { p { color: $color; } }
+    &:hover { background: $color; }
+  }
+
+  &.uthsc-highlight-box-green {
+    @include uthsc-highlight-box-color($uthsc-green-light);
+  }
+
+  &.uthsc-highlight-box-purple {
+    @include uthsc-highlight-box-color($uthsc-purple);
+  }
+
+  background: #fff;
+  margin: 1em 0;
+
+  &.uthsc-highlight-box-border {
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  & > a {
+    color: inherit;
+    font-weight: normal;
+  }
+
+  .uthsc-highlight-box-image {
+    overflow:hidden;
+    img {
+      transition: all 0.5s ease;
+      width:100%;
+    }
+  }
+
+  .uthsc-highlight-box-title {
+    padding: 1rem 2rem;
+    p {
+      font-size: 1.3em;
+      font-weight: normal;
+      text-align: center;
+      color: $uthsc-blue-dark;
+      margin-bottom: 0;
+    }
+  }
+
+  .uthsc-highlight-box-description {
+    padding: 0 2rem 1rem;
+  }
+
+  &:hover {
+    background: $uthsc-blue-dark;
+
+    .uthsc-highlight-box-title p {
+      color: #fff;
+    }
+
+    .uthsc-highlight-box-description {
+      color: #fff;
+    }
+
+    .uthsc-highlight-box-image img {
+      transform: scale(1.075);
+      transition: all 0.5s ease;
+    }
+  }
+}
+}

@@ -1,0 +1,180 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+////
+/// @group top-bar
+////
+
+/// Padding for the top bar.
+/// @type Number
+$section-nav-padding: 0 !default;
+
+/// Background color for the top bar. This color also cascades to menus within the top bar.
+/// @type Color
+$section-nav-background: #eee !default;
+
+/// Color for links inside a top bar menu.
+/// @type Color
+$section-nav-link-color: #000 !default;
+
+/// Width of `<input>` elements inside the top bar.
+/// @type Number
+$section-nav-input-width: 200px !default;
+
+$uthsc-section-nav-border: scale-color($uthsc-breadcrumbs-background, $lightness: -15%);
+
+/// Adds styles for a top bar container.
+@mixin section-nav-container {
+  @include clearfix;
+  padding: $section-nav-padding;
+
+  &, ul {
+    background: $section-nav-background;
+
+    & li > a {
+      color: $section-nav-link-color;
+    }
+  }
+
+  input {
+    width: $section-nav-input-width;
+    margin-#{$global-right}: 1rem;
+  }
+}
+
+@mixin  uthsc-section-nav {
+
+  #uthsc-section-navigation {
+
+    background-color: $primary-color;
+    position:absolute;
+    width:100%;
+    z-index: 100;
+
+    //this class is added to the section nav to
+    //make it stick to the top of the window
+    &.uthsc-sticky {
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-top: 0;
+    }
+
+    //Overide of foundation's float right last column to keep dropdowns with less than 6 items left aligned
+    .column.uthsc-navigation-column:last-child:not(:first-child), .columns.uthsc-navigation-column:last-child:not(:first-child) {
+      float: left;
+    }
+
+    a {
+      color: #fff;
+      padding: .5em;
+      display:block;
+
+      &:hover {
+        //background: $uthsc-blue-dark !important;
+        background: darken($primary-color, 5%) !important;
+        background: darken($primary-color, 10%) !important; //darkened for breast-cancer-awareness
+
+      }
+    }
+
+    & > ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    //Top Level Category List
+    & > ul > li {
+
+      text-align: center;
+      border-right: 1px solid $uthsc-section-nav-border;
+
+      &:hover {
+        background-color: scale-color($primary-color, $lightness: -10%);
+      }
+
+      &:first-child {
+        border-left: 1px solid $uthsc-section-nav-border;
+      }
+      & > a {
+        //width:100%;
+        @include vertical-center-flex-box;
+        flex-direction: row;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+
+    //Inner Link List
+    & > ul > li > ul {
+
+      //@include element-invisible;
+      //@include uthsc-element-invisible;
+      position: absolute;
+      //overflow: hidden;
+      clip: rect(0,0,0,0);
+      text-align: left;
+      margin-left: 0;
+      margin-top: 0.2em;
+      margin-bottom: 0.6em;
+      padding-left: 0px;
+      width:16.4%;
+
+      @include breakpoint(xlarge) {
+        width:199px;
+      }
+
+      li {
+        font-size: .8em;
+        line-height: 1.5em;
+        font-weight: bold;
+        float: none;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        height: 6px;
+        width: 50%;
+        margin-left: auto;
+        background: white;
+        margin-right: auto;
+        margin-bottom: 0.4em;
+        color: white !important;
+        opacity: 0.07;
+      }
+
+    }
+
+    &.show-menu ul li ul {
+      clip: auto;
+      position: relative;
+      display: none;
+      width:initial;
+
+      li {
+        &:hover {}
+      }
+    }
+
+    //hide hover-able nested links from view but remain visible to screen readers
+    &.hide-class ul li ul {
+      //@include element-invisible;
+      @include uthsc-element-invisible;
+    }
+
+    //hide entire navigation menu from view for medium down but remain visible to screen readers
+    @include breakpoint(medium down) {
+      //@include element-invisible;
+      @include uthsc-element-invisible;
+    }
+
+    @include uthsc-nav-on;
+
+  }
+
+}

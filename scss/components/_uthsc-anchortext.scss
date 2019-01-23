@@ -1,0 +1,54 @@
+@mixin uthsc-anchortext {
+  .main-content,
+  .uthsc-content-footer {
+    p a, li:not(.tabs-title, .accordion-item, .is-drilldown-submenu-parent, .is-drilldown-submenu-item, .js-drilldown-back) a, figcaption a, .anchortext {
+      text-decoration: none;
+      text-shadow: -1px 0 0 white, 1px 0 0 white;
+      padding: 1px 0;
+
+      background-image: linear-gradient(to top,
+              rgba(0, 0, 0, 0) 13%,
+              rgba(0, 0, 0, .3) 13%,
+              rgba(0, 0, 0, .3) 18%,
+              rgba(0, 0, 0, 0) 18%
+      );
+      &:hover {
+        background-image: linear-gradient(to top,
+                rgba(0, 0, 0, 0) 13%,
+                rgba(0, 106, 77, 1) 13%,
+                rgba(0, 106, 77, 1) 18%,
+                rgba(0, 0, 0, 0) 18%
+        );
+      }
+
+      //fix for buttons
+      &.button {
+        text-shadow: none;
+        padding: 0.85em 1em;
+        background-image: none;
+
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  //fix background on footer-top
+  .uthsc-content-footer {
+    p a, li a, figcaption a {
+      text-shadow: -1px 0 0 $uthsc-content-footer-background, 1px 0 0 $uthsc-content-footer-background !important;
+    }
+  }
+
+  //Reset mobile tabs
+  .tabs .tabs-title a {
+    background-image: none;
+    text-shadow: none;
+
+    &:hover {
+      background-image: none;
+      text-shadow: none;
+    }
+  }
+}

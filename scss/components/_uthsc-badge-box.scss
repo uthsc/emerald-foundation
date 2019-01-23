@@ -1,0 +1,26 @@
+@mixin uthsc-badge-box {
+  .uthsc-badge-box {
+    margin: 1rem 0 3rem;
+    .uthsc-badge-box-icon {
+      height:7em;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-color;
+
+      span.fa {
+        margin: 0 auto;
+      }
+    }
+    .uthsc-badge-box-text {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.25rem;
+      max-width: 250px;
+      margin: 0.5rem auto 0;
+      text-align:center;
+    }
+    .uthsc-badge-box-stacked {
+      color:#fff;
+    }
+  }
+}

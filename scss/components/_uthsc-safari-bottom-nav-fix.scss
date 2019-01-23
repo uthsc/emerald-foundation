@@ -1,0 +1,17 @@
+////
+/// @group uthsc-safari-bottom-nav-fix
+////
+
+
+@mixin uthsc-safari-bottom-nav-fix {
+  .safari-bottom-nav-fix--active {
+    height:44px;
+    width:100%;
+    background:darken($primary-color, 5%);
+    background-image: url('/images/uthsc-logo-short-green-dark-emboss.png');
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: 50% 7px;
+    clear:left;
+  }
+}

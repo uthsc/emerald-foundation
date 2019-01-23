@@ -1,0 +1,50 @@
+@mixin uthsc-events {
+  .uthsc-events {
+
+    margin: 1.7rem auto;
+
+    &:last-of-type {
+      //float: left;
+    }
+
+    .uthsc-event {
+      margin: 5px 0;
+
+      p {
+        margin: 0;
+        line-height: 1.2rem;
+        font-size: .85rem;
+
+        &.uthsc-event-title {
+          padding-top: 0.5rem;
+        }
+      }
+
+      .uthsc-event-date {
+        border: 1px solid #b5121b;
+        padding: .5rem;
+        width: 4.5rem;
+        height: 4.4rem;
+        text-align: center;
+        border-radius: 7px;
+        background: linear-gradient(0deg, #Ddd, white 55%, #b5121b 55%);
+        color: #444;
+        font-weight: bold;
+        float: left;
+        margin-right: 0.7rem;
+        font-size: 2rem;
+        line-height: 0;
+
+        .uthsc-event-month {
+          color: #fff;
+          font-size: 1rem;
+          line-height: 1rem;
+        }
+
+        .uthsc-event-day {
+          line-height: 3.2rem;
+        }
+      }
+    }
+  }
+}

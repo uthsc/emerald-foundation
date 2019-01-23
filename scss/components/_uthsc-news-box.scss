@@ -1,0 +1,52 @@
+////
+/// @group news box
+////
+
+/// Background color for the banner. This color also cascades to menus within the top bar.
+/// @type Color
+$uthsc-news-box: $uthsc-green !default;
+
+/// Adds styles for a top bar container.
+@mixin uthsc-news-box {
+  .uthsc-news-box {
+
+    .uthsc-news-box-dark &{
+      background: $primary-color;
+      color:#fff;
+
+      a {color:#fff;}
+
+      &:hover {
+        background: $uthsc-green-dark;
+        transition: 500ms;
+      }
+    }
+
+    padding:1em 0;
+    transition:500ms;
+    margin: .5em 0;
+
+
+
+    h4 {
+      font-size:1em;
+      font-weight: inherit;
+    }
+
+    &:hover {
+      background: $primary-color;
+      transition: 500ms;
+      color:#fff;
+
+      a {color:#fff;}
+    }
+
+    a{
+      display: block;
+
+      p{
+        font-weight: 100;
+      }
+    }
+  }
+}

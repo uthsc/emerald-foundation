@@ -1,0 +1,31 @@
+////
+/// @group mime icons
+////
+
+/// Adds font awesome icons to the end of links based on href mimetype
+
+@mixin mime-icon($type, $unicode, $target: "$") {
+  a[href#{$target}="#{$type}"]:after {
+    font-family: "FontAwesome";
+    content: "\00a0#{$unicode}";
+    font-weight:normal;}
+}
+
+@mixin uthsc-mime-icons {
+  @include mime-icon(".pdf", "\f1c1", "*");
+
+  @include mime-icon("doc", "\f1c2");
+  @include mime-icon("docx", "\f1c2");
+
+  @include mime-icon("xls", "\f1c3");
+  @include mime-icon("xlsx", "\f1c3");
+
+  @include mime-icon("ppt", "\f1c4");
+  @include mime-icon("pptx", "\f1c4");
+
+  //reset for links with the image-link
+  //class added to links that have an image (see js)
+  a.uthsc-image-link:after {
+    content: "";
+  }
+}

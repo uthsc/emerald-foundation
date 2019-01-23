@@ -1,0 +1,187 @@
+/* flex mixins */
+@mixin uthsc-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin uthsc-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin uthsc-horizontal-spaced {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+@mixin uthsc-horizontal-justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin uthsc-global {
+
+  .uthsc-row-title {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding: .5rem;
+    margin-bottom: 1rem;
+  }
+
+  .left ~ ul {
+    margin-left: 0;
+    clear: left;
+  }
+  .left ~ ul li {
+    position: relative;
+    left: 1em;
+    padding-right: 1em;
+  }
+
+  .uthsc-figure {
+    margin: 0;
+    margin-bottom: 1rem;
+    background: $body-background;
+    &.thumbnail {
+      figcaption {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+    figcaption {
+      font-size: 0.85em;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 1.5;
+      box-shadow: 0 0 0 1px rgba(10,10,10,0.2) inset;
+      padding: 5px;
+      a {
+        font-weight: 700;
+      }
+    }
+    width:100%;
+    img {
+      width: 100% !important;
+    }
+  }
+
+  small.uthsc-figure-source{display:block;margin-top:1rem;}
+
+  .uthsc-figure-small-up-10 {
+    width: 10%;
+  }
+  .uthsc-figure-small-up-20 {
+    width: 20%;
+  }
+  .uthsc-figure-small-up-30 {
+    width: 30%;
+  }
+  .uthsc-figure-small-up-40 {
+    width: 40%;
+  }
+  .uthsc-figure-small-up-50 {
+    width: 50%;
+  }
+  .uthsc-figure-small-up-60 {
+    width: 60%;
+  }
+  /* Add padding to floated images */
+  .left img, figure.left {
+    margin-right: 1em;
+    float: left;
+  }
+  .right img, figure.right {
+    margin-left: 1em;
+    float: right;
+  }
+  @include breakpoint(medium) {
+
+    .left ~ ul {
+      clear: none;
+    }
+
+    .uthsc-figure-10 {
+      width: 10%;
+    }
+    .uthsc-figure-20 {
+      width: 20%;
+    }
+    .uthsc-figure-30 {
+      width: 30%;
+    }
+    .uthsc-figure-40 {
+      width: 40%;
+    }
+    .uthsc-figure-50 {
+      width: 50%;
+    }
+    .uthsc-figure-60 {
+      width: 60%;
+    }
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  a, strong, b {
+    font-weight: 700;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    & strong, b, em, i {
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+
+  //search form margins
+  .search-form {
+    margin-bottom: 0;
+  }
+  .uthsc-banner .search-form {
+    margin-bottom: 1em;
+  }
+
+  //add gross background color to table headings
+  table thead {
+    background: #ced084;
+  }
+
+  //add additional styles to blockquote
+  //that aren't defined in settings
+  blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+
+  //add background to active accordion title
+  .accordion-item.is-active .accordion-title {
+    background-color: #e6e6e6;
+  }
+
+  table {
+    border-spacing: 0;
+  }
+}
+
+// add space before target when dropping down a page for an anchor link
+// to prevent hiding it behind the sticky uthsc-section-nav on large
+@include breakpoint(large) {
+  :target:before {
+    content: "";
+    display: block;
+    height: 83px; /* fixed header height*/
+    margin: -83px 0 0 0; /* negative fixed header height */
+  }
+}

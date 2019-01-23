@@ -1,0 +1,38 @@
+//center text in heading links
+@mixin vertical-center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+@mixin vertical-center-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@mixin vertical-center-flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //background:brown;
+}
+
+//modified version of foundation's element invisible mixin
+//edited to prevent bug with equalizer that caused equalized
+//menu items to be full height on resize
+@mixin uthsc-element-invisible {
+  position: absolute !important;
+  //width: 1px;
+  //height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin uthsc-nav-on {
+  .uthsc-nav-on > a {
+    background: scale-color($uthsc-blue, $lightness: -25%);
+  }
+}

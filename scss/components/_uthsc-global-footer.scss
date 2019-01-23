@@ -1,0 +1,109 @@
+////
+/// @group global-footer
+////
+
+/// Background color for the global footer.
+/// @type Color
+$uthsc-global-footer-background: $uthsc-first-bookend-color !default;
+
+/// Adds styles for a top bar container.
+@mixin uthsc-global-footer-styles {
+  background-color: $uthsc-global-footer-background;
+
+  p {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+  }
+
+  a {
+    color: #fff;
+    font-weight: 300;
+    &:hover {
+      color: $uthsc-blue-dark;
+    }
+  }
+
+  .uthsc-copy-block {
+    ul, p {
+      margin: 2rem;
+      font-weight: 300;
+    }
+    ul {
+      list-style: none;
+      li {
+        font-weight: 300;
+      }
+    }
+  }
+
+  .uthsc-footer-button {
+    background-color: #ffffff;
+    &:hover {
+      background-color: $uthsc-blue-dark;
+    }
+    p {
+      margin-bottom: 0;
+      color: $uthsc-global-footer-background;
+    }
+  }
+
+  .uthsc-social-icons .fa {
+    padding: 1rem;
+    &:hover {
+      color: $uthsc-blue-dark;
+    }
+  }
+  #uthsc-emergency-desktop
+  .fa {
+    margin-top: 1rem;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  & #uthsc-emergency-mobile {
+
+    * {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    h2 {
+      @include uthsc-vertical-center;
+      @include uthsc-horizontal-center;
+    }
+    $accordion-background: #b5121b;
+    $accordion-background-hover-color: scale-color($accordion-background, $lightness: -5%);
+    $accordion-background-active-color: scale-color($accordion-background, $lightness: -30%);
+    .accordion {
+      border: none;
+      color: #fff;
+    }
+    .accordion-title {
+      background: $accordion-background;
+      padding: 1rem;
+      font-size: 1rem;
+      height: 44px;
+      &:hover, &:focus, &:active {
+        background: $accordion-background-active-color;
+      }
+    }
+    .accordion-content {
+      background: scale-color($accordion-background-active-color, $lightness: -30%);
+      .button {
+        @include uthsc-vertical-center;
+        @include uthsc-horizontal-center;
+      }
+      p {
+        margin: 0.8rem;
+      }
+    }
+
+  }
+}
+
+@mixin uthsc-global-footer {
+  .uthsc-global-footer {
+    @include uthsc-global-footer-styles;
+  }
+}

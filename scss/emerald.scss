@@ -1,0 +1,40 @@
+/*
+ |-------------------------------------------------------------------------------------------------
+ | Emerald imports
+ |-------------------------------------------------------------------------------------------------
+ |
+ | Emerald is where we keep all of our global uthsc settings and components and import foundation
+ | It is added as a dependency on a per-project basis, so nothing should be included here
+ | Import this file and include specific components in your project's main scss file
+ |
+ */
+
+@import 'settings';
+@import 'foundation-sites/scss/foundation';
+
+@include foundation-everything;
+
+@import 'motion-ui/motion-ui';
+
+@import 'components/uthsc-anchortext';
+@import 'components/uthsc-accordion';
+@import 'components/uthsc-background-stripe';
+@import 'components/uthsc-banner';
+@import 'components/uthsc-content-footer';
+@import 'components/uthsc-global';
+@import 'components/uthsc-hero';
+@import 'components/uthsc-mixins';
+@import 'components/uthsc-site-nav';
+@import 'components/uthsc-safari-bottom-nav-fix';
+@import 'components/uthsc-off-canvas';
+@import 'components/uthsc-global-footer';
+@import 'components/uthsc-breadcrumbs';
+@import 'components/uthsc-section-nav';
+@import 'components/uthsc-news-box';
+@import 'components/uthsc-page-opening';
+@import 'components/uthsc-highlight-box';
+@import 'components/uthsc-events';
+@import 'components/uthsc-badge-box';
+@import 'components/uthsc-badge-box-link';
+@import 'components/uthsc-tabs';
+@import 'components/uthsc-mime-icons';

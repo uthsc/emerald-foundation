@@ -1,0 +1,109 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+////
+/// @group uthsc-site-nav
+////
+
+/// Padding for the uthsc-site-nav.
+/// @type Number
+//$uthsc-site-nav-padding: 0.5rem !default;
+$uthsc-site-nav-padding: 0rem !default;
+
+/// Background color for the uthsc-site-nav. This color also cascades to menus within the uthsc-site-nav.
+/// @type Color
+$uthsc-site-nav-background: $uthsc-first-bookend-color !default;
+
+//$uthsc-site-nav-background-hover: scale-color($uthsc-blue, $lightness: -20%);
+$uthsc-site-nav-background-hover: scale-color($primary-color, $lightness: -20%); //breast-cancer-awareness
+
+/// Color for links inside a uthsc-site-nav menu.
+/// @type Color
+$uthsc-site-nav-link-color: #fff !default;
+
+/// Width of `<input>` elements inside the uthsc-site-nav.
+/// @type Number
+$uthsc-site-nav-input-width: 160px !default;
+
+/// Adds styles for a uthsc-site-nav container.
+@mixin uthsc-site-nav-container {
+
+  @include breakpoint(medium down) {
+    @include element-invisible;
+  }
+
+  font-weight: bold;
+
+  @include clearfix;
+  padding: $uthsc-site-nav-padding;
+
+  a {
+    color: $uthsc-site-nav-link-color;
+  }
+
+  &, ul, .dropdown.menu .submenu, .button {
+    background-color: $uthsc-site-nav-background;
+    z-index: 200;
+  }
+  li:hover, li ul li:hover, .button:hover {
+    background-color: $uthsc-site-nav-background-hover;
+  }
+
+  .dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
+    border-color: rgba(255, 255, 255, 0.4) transparent transparent;
+  }
+
+  input {
+    width: $uthsc-site-nav-input-width;
+  }
+
+  input.button {
+    width:auto;
+  }
+
+  /* fix for dropdown arrow issue */
+  .dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
+    position: initial;
+  }
+
+}
+
+@mixin menu-icon-fix(
+  $width: 1.3rem
+){
+  width: $width;
+  text-align: center;
+}
+
+
+@mixin uthsc-site-nav {
+  // uthsc-site-nav container
+  .uthsc-site-nav {
+
+    @include uthsc-site-nav-container;
+
+    .menu > li > a {
+      display: block;
+      padding: 0.8rem .5rem;
+      line-height: 1;
+      font-size: .8rem;
+    }
+  }
+
+  // Sub-sections
+  // Stack on small screens
+  @include breakpoint(medium) {
+    .uthsc-site-nav-left {
+      float: left;
+    }
+
+    .uthsc-site-nav-right {
+      float: right
+    }
+  }
+
+  .uthsc-site-nav .submenu .fa, nav.uthsc-off-canvas-menu .uthsc-fa-centered.fa {
+    @include menu-icon-fix;
+  }
+}

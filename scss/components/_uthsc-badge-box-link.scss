@@ -1,0 +1,42 @@
+a.uthsc-badge-box-link {
+  margin: 1rem 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  .uthsc-badge-box-icon {
+    height: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $uthsc-green;
+
+    span.fa {
+      margin: 0 auto;
+    }
+  }
+  .uthsc-badge-box-text {
+    font-size: 1.25rem;
+    max-width: 250px;
+    margin: 0.5rem auto 0;
+    text-align: center;
+  }
+  .uthsc-badge-box-stacked {
+    color: #fff;
+  }
+  &:hover {
+    box-shadow: 2px 2px inset #ccc, -2px -2px inset #ccc;
+    border-radius: 5px;
+
+  }
+  &.alt:hover {
+    box-shadow: none;
+    color: $uthsc-green-dark !important;
+    .uthsc-badge-box-icon {
+      box-shadow: none;
+      color: $uthsc-green-dark !important;
+    }
+  }
+}
